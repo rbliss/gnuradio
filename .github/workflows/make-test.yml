@@ -20,7 +20,7 @@ jobs:
         exclude: './volk'
         extensions: 'h,hpp,cpp,cc'
   # All of these shall depend on the formatting check (needs: check-formatting)
-  ubuntu-20.04:
+  ubuntu-20_04:
     needs: check-formatting
     runs-on: ubuntu-latest
     container:
