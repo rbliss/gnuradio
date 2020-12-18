@@ -1,0 +1,10 @@
+name: 'GNU Radio Make Test'
+description: 'Runs make && make test'
+inputs:
+  docker-image:
+    description: 'Which Docker image to run this on'
+    required: true
+    default: 'gnuradio/ci-ubuntu-20.04-3.9:0.1'
+runs:
+  using: 'docker'
+  image: ${{ inputs.docker-image }}

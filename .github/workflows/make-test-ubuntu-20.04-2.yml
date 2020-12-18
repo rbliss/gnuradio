@@ -1,0 +1,18 @@
+name: 'Ubuntu 20.04: Make Test'
+on:
+  push:
+    branches:
+      - master
+      - maint-3.9
+  pull_request:
+    branches:
+      - master
+      - maint-3.9
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: './.github/actions/make-test-docker'
+      with:
+        docker-image: 'gnuradio/ci-ubuntu-20.04-3.9:0.1'
