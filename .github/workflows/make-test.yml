@@ -38,4 +38,4 @@ jobs:
     - name: Make
       run: 'cd /build && make -j2'
     - name: Make Test
-      run: 'cd /build && ctest --output-on-failure -E qa_uhd|qa_uncaught_exception|qa_header_payload_demux'
+      run: 'cd /build && ctest --output-on-failure -E "qa_uhd|qa_uncaught_exception|qa_header_payload_demux"'
