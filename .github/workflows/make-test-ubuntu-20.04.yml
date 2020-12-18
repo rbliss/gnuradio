@@ -13,8 +13,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: 'gnuradio/ci-ubuntu-20.04-3.9:0.2'
+      volumes:
+        - build_data:/build
+      options: --cpus 2
     steps:
     - uses: actions/checkout@v2
       name: Checkout Project
-    - name: Build and Test
-      run: /build.sh
+    - name: CMake
+      run: 'cd build && cmake ${GITHUB_WORKSPACE}'
+    - name: Make
+      run: 'cd build && make -j2'
+    - name: Make Test
+      run: 'cd build && ctest --output-on-failure'
