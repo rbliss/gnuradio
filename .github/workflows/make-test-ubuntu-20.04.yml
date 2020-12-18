@@ -12,8 +12,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: 'gnuradio/ci-ubuntu-20.04-3.9:0.2'
     steps:
     - uses: actions/checkout@v2
-    - uses: './.github/actions/make-test-docker'
-      with:
-        docker-image: 'gnuradio/ci-ubuntu-20.04-3.9:0.1'
+      name: Checkout Project
+    - name: Build and Test
+      run: /build.sh
