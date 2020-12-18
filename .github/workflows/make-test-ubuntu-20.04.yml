@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: 'gnuradio/ci-ubuntu-20.04-3.9:0.2'
+      image: 'gnuradio/ci-ubuntu-20.04-3.9:0.3'
       volumes:
         - build_data:/build
       options: --cpus 2
