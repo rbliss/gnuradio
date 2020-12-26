@@ -61,7 +61,7 @@ class DrawingArea(Gtk.DrawingArea):
         # Or should more of the page functionality move here?
 
         # setup drag and drop
-        self.drag_dest_set(Gtk.DestDefaults.ALL, [], Gdk.DragAction.COPY)
+        self.drag_dest_set(Gtk.DestDefaults.ALL, Constants.DND_TARGETS, Gdk.DragAction.COPY)
         self.connect('drag-data-received', self._handle_drag_data_received)
         self.drag_dest_set_target_list(None)
         self.drag_dest_add_text_targets()
